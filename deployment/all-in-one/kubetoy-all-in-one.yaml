@@ -103,7 +103,6 @@ metadata:
   labels:
     app: kubetoy-app
 spec:
-  subdomain: ''
   to:
     kind: Service
     name: kubetoy-service
