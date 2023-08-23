@@ -1,10 +1,24 @@
+name: Create UCD Component Version
+
 on:
+  workflow_dispatch:
   push:
     branches:
-      - 'main'
+      - main
 
 jobs:
-  Create_UCD_Comp_Version:
-    runs-on: ubuntu_latest
-    name: A job to create a new ArgoCD componenent version
+  deploy:
+    runs-on: ubuntu-latest
+
     steps:
+    - name: Create Component Version
+      uses: tpneal/create-ucd-component-version-javascript-action@v1.1
+      with:
+        component: 'ArgoCD'
+        name: 'v1'
+        description: 'Version 1 of ArgoCD'
+        type: 'full'
+        hostname: 'ucd7320-opr-ibm-ucd-prod-tneal.ucd-ocp10-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
+        port: '443'
+        username: 'admin'
+        password: 'admin'
