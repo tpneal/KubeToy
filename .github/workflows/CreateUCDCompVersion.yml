@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: tpneal/UCDCreateVersionAction@v1.8
+      uses: tpneal/UCDCreateVersionAction@v1.9
       with:
         component: 'ArgoCD'
         versionname: '${{ github.event.head_commit.id }}'
