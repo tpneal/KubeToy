@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: tpneal/UCDCreateVersionAction@v1.1
+      uses: tpneal/UCDCreateVersionAction@v1.2
       with:
         component: 'ArgoCD'
         versionname: 'v1'
