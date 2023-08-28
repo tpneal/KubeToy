@@ -14,7 +14,7 @@ jobs:
     - name: Create Component Version
       uses: tpneal/UCDCreateVersionAction@v1.11
       with:
-        component: 'ArgoCD'
+        component: 'ArgoCD-KubeToy'
         versionname: '${{ github.event.head_commit.id }}'
         description: '${{ github.repositoryUrl }}'
         hostname: 'ucd7320-opr-ibm-ucd-prod-tneal.ucd-ocp10-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
