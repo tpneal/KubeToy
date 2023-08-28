@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: tpneal/UCDCreateVersionAction@v1.14
+      uses: tpneal/UCDCreateVersionAction@v1.15
       with:
         component: 'ArgoCD-KubeToy'
         versionname: '${{ github.event.head_commit.id }}'
