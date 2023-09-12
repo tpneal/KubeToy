@@ -21,4 +21,3 @@ jobs:
         port: '443'
         username: 'admin'
         password: '${{ secrets.UCD_PASSWORD }}'
-        authToken: '${{ secrets.UCD_AUTHTOKEN }}'
