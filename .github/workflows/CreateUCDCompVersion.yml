@@ -12,11 +12,12 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: tpneal/UCDCreateVersionAction@v1.31
+      uses: tpneal/UCDCreateVersionAction@v1.32
       with:
         component: 'ArgoCD-KubeToy'
         versionname: '${{ github.event.head_commit.id }}'
-        description: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
+        description: '${{ github.repositoryUrl }}'
+        link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'ucd7320-opr-ibm-ucd-prod-tneal.ucd-ocp10-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
         port: '443'
         authToken: '${{ secrets.UCD_AUTHTOKEN }}'
