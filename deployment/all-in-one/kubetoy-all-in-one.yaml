@@ -16,7 +16,7 @@ spec:
       spec:
         containers:
         - name: kubetoy
-          image: hsternkicker/kubetoy:2.0
+          image: hsternkicker/kubetoy:1.0
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
