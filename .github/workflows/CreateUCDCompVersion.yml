@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: tpneal/UCDCreateVersionAction@v1.32
+      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@main
       with:
         component: 'ArgoCD-KubeToy'
         versionname: '${{ github.event.head_commit.id }}'
