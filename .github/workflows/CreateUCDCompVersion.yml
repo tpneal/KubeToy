@@ -12,11 +12,11 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@main
+      uses: tpneal/UCDCreateVersionAction@main
       with:
         component: 'ArgoCD-KubeToy'
-        versionname: '${{ github.event.head_commit.id }}'
-        description: '${{ github.repositoryUrl }}'
+        versionname: '${{ github.event.head_commit.message }}'
+        description: 'Commit: ${{ github.event.head_commit.id }} Repository: ${{ github.repositoryUrl }}'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'ucd7320-opr-ibm-ucd-prod-tneal.ucd-ocp10-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
         port: '443'
