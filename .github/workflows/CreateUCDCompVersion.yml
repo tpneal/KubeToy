@@ -16,7 +16,7 @@ jobs:
       with:
         component: 'ArgoCD-KubeToy'
         versionname: '${{ github.event.head_commit.message }}'
-        description: 'Commit: ${{ github.event.head_commit.id }} Repository: ${{ github.repositoryUrl }}'
+        description: 'Commit ID: ${{ github.event.head_commit.id }} Repository URL: ${{ github.repositoryUrl }}'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'ucd7320-opr-ibm-ucd-prod-tneal.ucd-ocp10-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
         port: '443'
