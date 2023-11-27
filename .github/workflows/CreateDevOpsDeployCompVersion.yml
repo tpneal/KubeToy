@@ -1,0 +1,32 @@
+name: Create DevOps Deploy Component Version
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Create DevOps Deploy component version
+      # You may pin to the exact commit or the version.
+      # uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@634e5c2b19279ce9c1fbc6ce5f61cb5c1762cb02
+      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v1.0
+      with:
+        # Component Name/ID
+        component: Kubetoy
+        # Component Version Name
+        versionname: '${{ github.event.head_commit.message }}'
+        # Component version description
+        description: 'Commit ID: ${{ github.event.head_commit.id }} Repository URL: ${{ github.repositoryUrl }}'
+        # URL to add to component version
+        link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
+        # DevOps Deploy hostname
+        hostname: 'openshift-gitops-server-openshift-gitops.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
+        # port
+        port: '443'
+        # DevOps Deploy authentication token
+        authToken: '${{ secrets.UCD_AUTHTOKEN }}'
+        
