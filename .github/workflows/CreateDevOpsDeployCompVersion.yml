@@ -19,4 +19,4 @@ jobs:
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'ucd80001163934-ibm-ucd-prod-ucd80001163934.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
         port: '443'
-        authToken: '90449ba9-f92f-40aa-8fe3-6eab837beab8'
+        authToken: '${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}'
