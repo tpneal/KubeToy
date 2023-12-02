@@ -19,7 +19,7 @@ jobs:
       uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v1.0
       with:
         component: 'Kubetoy'
-        versionname: ${short_commit_id}-${{ github.event.head_commit.message }}
+        versionname: '${{ env.short_commit_id }}-${{ github.event.head_commit.message }}'
         description: 'Commit ID:  Repository URL: ${{ github.repositoryUrl }}'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'ucd80001163934-ibm-ucd-prod-ucd80001163934.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
