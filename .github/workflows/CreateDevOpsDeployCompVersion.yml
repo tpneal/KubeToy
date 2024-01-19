@@ -20,6 +20,6 @@ jobs:
         versionname: '${{ env.short_commit_id }}:${{ github.event.head_commit.message }}'
         description: 'Commit ID: ${{ github.event.head_commit.id }} Repository URL: ${{ github.repositoryUrl }}'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
-        hostname: 'https://ucd80011164713-ibm-ucd-prod-ucd80011164713.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
+        hostname: 'ucd80011164713-ibm-ucd-prod-ucd80011164713.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
         port: '443'
         authToken: '${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}'
