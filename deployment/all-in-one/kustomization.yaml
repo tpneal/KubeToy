@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - ./kubetoy-all-in-one.yaml
 images:
-- name: hsternkicker/kubetoy
-  newTag: 1.0.2
+- name: tpneal/kubetoy
+  newTag: 1.0
