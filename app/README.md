@@ -3,7 +3,7 @@
 
 A simple Node.js application that deploys to IBM Cloud Private.  It is used to help 
 explore the functionality of Kubernetes.  This toy application has a user interface 
-which you can use to:
+which you can use to do the following:
 
 * write messages to the log (stdout / stderr)
 * intentionally crash the application to view auto repair
