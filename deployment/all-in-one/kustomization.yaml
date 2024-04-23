@@ -4,4 +4,4 @@ resources:
 - ./kubetoy-all-in-one.yaml
 images:
 - name: tpneal/kubetoy
-  newTag: 2.0
+  newTag: '2.0'
