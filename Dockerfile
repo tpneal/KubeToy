@@ -12,7 +12,7 @@ COPY views ./views
 COPY public ./public
 
 RUN npm install \
-    && npm audit fix 
+    && npm audit fix --force
 
 EXPOSE 3000
 
