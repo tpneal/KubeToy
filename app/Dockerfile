@@ -16,4 +16,6 @@ RUN npm install \
 
 EXPOSE 3000
 
+LABEL name=KubeToy
+
 CMD ["node", "app.js"]
