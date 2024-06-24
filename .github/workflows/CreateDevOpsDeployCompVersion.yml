@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Create artifacts to add to component
       id: create-artifacts
-      run: mkdir /tmp/artifacts && date > /tmp/artifacts/date.txt && date > /tmp/artifacts.xyz
+      run: mkdir /tmp/artifacts && date > /tmp/artifacts/date.txt && date > /tmp/artifacts/date.xyz
     - name: Set short_commit_id
       id: vars
       run: echo "short_commit_id=$(echo ${{ github.event.head_commit.id }} | cut -c1-7)" >> "$GITHUB_ENV"
@@ -30,7 +30,7 @@ jobs:
         versionProperties: |-
           Prop1:${{ env.short_commit_id }}:false
           Prop2:${{ github.event.head_commit.message }}:false
-          Prop3:TestSecure:false
+          Prop3:TestSecure:true
         hostname: 'ucd80011164713-ibm-ucd-prod-ucd80011164713.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
         port: '443'
         authToken: '${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}'
