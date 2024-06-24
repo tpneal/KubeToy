@@ -36,5 +36,5 @@ jobs:
         authToken: '${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}'
         base: /tmp/artifacts
         offset: baseball/schedule
-        include: '*.txt'
+        exclude: '*.txt'
         
