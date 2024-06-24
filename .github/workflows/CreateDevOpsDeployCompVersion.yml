@@ -17,11 +17,12 @@ jobs:
       id: vars
       run: echo "short_commit_id=$(echo ${{ github.event.head_commit.id }} | cut -c1-7)" >> "$GITHUB_ENV"
     - name: Create Component Version
-      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v1.0
+      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v2devel
       with:
         component: 'KubeToy'
         versionname: '${{ env.short_commit_id }}:${{ github.event.head_commit.message }}'
         description: 'Commit ID: ${{ github.event.head_commit.id }} Repository URL: ${{ github.repositoryUrl }}'
+        linkName: 'Git Commit'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'ucd80011164713-ibm-ucd-prod-ucd80011164713.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
         port: '443'
