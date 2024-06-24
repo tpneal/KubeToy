@@ -37,4 +37,5 @@ jobs:
         base: /tmp/artifacts
         offset: baseball/schedule
         exclude: '*.txt'
+        saveExecuteBits: true
         
