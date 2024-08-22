@@ -31,7 +31,7 @@ jobs:
           Prop1:${{ env.short_commit_id }}:false
           Prop2:${{ github.event.head_commit.message }}:false
           Prop3:TestSecure:true
-        hostname: 'ucd80011164713-ibm-ucd-prod-ucd80011164713.ucd-ocp12-e3a3d814b8ff2369cc3d5b63c99b22ba-0000.us-east.containers.appdomain.cloud'
+        hostname: 'ucd-argocd-ibm-ucd-prod-tneal.deploydev1.us-east.containers.appdomain.cloud'
         port: '443'
         authToken: '${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}'
         base: /tmp/artifacts
