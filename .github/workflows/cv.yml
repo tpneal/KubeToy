@@ -1,0 +1,26 @@
+name: Test createcomponentversion v3
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest   # or your self-hosted runner's labels
+    steps:
+      - name: Create files to upload
+        run: mkdir -p "$RUNNER_TEMP/artifacts" && date > "$RUNNER_TEMP/artifacts/date.txt"
+
+      - uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v3devel
+        id: cv
+        env:
+          UC_TLS_VERIFY_CERTS: "true"   # only if your server uses a self-signed certificate
+        with:
+          component: 'Kubetoy'
+          versionname: 'peer-test-${{ github.run_id }}'
+          link: '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+          base: ${{ runner.temp }}/artifacts
+          versionProperties: |
+            TestProperty:TestValue:false
+          serverUrl: 'tneal.deploydevvpc1.us-east.containers.appdomain.cloud'
+          authToken: ${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}
+          # or: username: ${{ secrets.DEPLOY_USERNAME }} and password: ${{ secrets.DEPLOY_PASSWORD }}
+
+      - run: echo "Created version ${{ steps.cv.outputs.version-id }} using the ${{ steps.cv.outputs.udclient-source }} udclient"
