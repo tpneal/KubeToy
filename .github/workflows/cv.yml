@@ -19,7 +19,8 @@ jobs:
           base: ${{ runner.temp }}/artifacts
           versionProperties: |
             TestProperty:TestValue:false
-          serverUrl: 'https://tneal.deploydevvpc1.us-east.containers.appdomain.cloud:443'
+          hostname: 'tneal.deploydevvpc1.us-east.containers.appdomain.cloud'
+          port: 443
           authToken: ${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}
           # or: username: ${{ secrets.DEPLOY_USERNAME }} and password: ${{ secrets.DEPLOY_PASSWORD }}
 
